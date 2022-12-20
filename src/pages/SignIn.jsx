@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {AiFillEye, AiFillEyeInvisible} from "react-icons/ai"
 export default function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
@@ -19,7 +20,7 @@ export default function SignIn() {
       <h1 className='text-3xl text-center mt-6 font-bold'>Sign In</h1>
       <div className='flex justify-center flex-wrap items-center max-w-6xl mx-auto px-6 py-12'>
         {/* image */}
-        <div className='md:w-[67%] lg:w-[50%] mb-12 md:mb-6'>
+        <div className='md:w-[67%] lg:w-[50%] mb-5 md:mb-6'>
           <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1973&q=80" 
           alt="house" 
           className='w-full rounded-sm'
@@ -62,8 +63,32 @@ export default function SignIn() {
                   />)
               }
             </div>
-     
+            
+            <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg'>
+              <p className='mb-6'>Don't have an account?
+                <Link 
+                  className='text-red-600 hover:text-red-900 transition duration-200 ease-in-out ml-1' 
+                  to="/sign-up"
+                >
+                    Register
+                </Link>
+              </p>
+              <p>
+                <Link 
+                  className='text-blue-600 hover:text-blue-900 transition duration-200 ease-in-out' 
+                  to="/forgot-password"
+                  >
+                    Forgot password
+                  </Link>
+              </p>
+            </div>
           </form>
+          <button 
+            className='w-full bg-blue-600 text-white py-3 uppercase text-sm font-semibold rounded shadow-lg hover:bg-blue-700 transition duration-200 ease-in-out' 
+            type="submit"
+            >
+              Sign in
+          </button>
         </div>
 
       </div>
