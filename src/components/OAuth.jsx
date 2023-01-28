@@ -24,7 +24,7 @@ export default function OAuth() {
         })
       }
       navigate("/")
-      console.log(user);
+      toast.success("Sign in successfully with Google")
     } catch (error) {
       toast.error("Couldn't authorize with Google")
       console.log(error);
